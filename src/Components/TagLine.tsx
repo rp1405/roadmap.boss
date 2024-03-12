@@ -22,7 +22,7 @@ const TagLine = () => {
       }, []); 
 
     return (
-        <div className={` text-white ${windowSize.width>600 && "flex flex-col"} items-center justify-center pt-10 text-xl pb-10 md:px-[18%] lg:w-[1500px] md:w-[1200px] px-2`}  >
+        <div className={` text-white ${windowSize.width>600 && "flex flex-col"} items-center justify-center pt-10 text-xl pb-10 lg:px-[14%] lg:w-[1500px] md:w-[1200px] px-2`}  >
             <button className='px-3 py-1 border-dotted border-purple-500 border-4 rounded-lg mb-8 text-purple-500 hover:text-white hover:border-white'><span className='text-white mr-1'>NEW</span> {windowSize.width > 600 ? ( <> Announcing roadmaps for teams.{' '}
                                                           <span className='font-semibold'>Learn More!</span>
                                                         </> ) : ( 'Roadmaps for teams')} 
