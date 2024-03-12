@@ -144,7 +144,7 @@ function Homepage() {
   return (
     <div className="w-full">
       <div className="bg-gradient-to-b from-headerBgTop to-headerBgBottom">
-        <div>
+        <div className="flex justify-center">
           <Header />
         </div>
 
