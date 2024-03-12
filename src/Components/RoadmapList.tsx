@@ -24,17 +24,17 @@ const RoadmapList: React.FC<RoadmapListProps> = (props) => {
 
     return (
 
-        <div className='py-10'>
+        <div className='py-10 text-center'>
 
-            <div className="flex items-center text-white border-solid pb-16">
+            <div className="flex items-center text-white border-solid pb-16 ">
                 <hr className="flex-grow  border-slate-500"/>
                 <p className=" rounded-2xl border text-slate-400 border-slate-500 py-2 px-4 text-xl">{heading}</p>
                 <hr className="flex-grow border-slate-500 text-slate-500"/>
             </div>
 
-            <div className= {'pb-20'+padd}  >
+            <div className= 'px-2 pb-20 lg:px-[18%]'>
 
-                <div className='grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-2'>
+                <div className='grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 lg:gap-2 md:gap-2'>
             
                     {/* {buttonArr} */}
                     {

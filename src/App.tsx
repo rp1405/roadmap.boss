@@ -43,7 +43,7 @@ function App() {
                     <Header/>
                 </div>
 
-                <div>
+                <div className="flex justify-center ">
                     <TagLine/>
                 </div>
 

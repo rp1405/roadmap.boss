@@ -20,7 +20,7 @@ const GuidesSection: React.FC<GuidesSectionProps> = (props) => {
     const {heading,buttons}=props
 
     return (
-        <div className=' py-6  sm:py-12  px-4 md:px-80 bg-guideSectionBg ' >
+        <div className=' py-6  sm:py-12  px-4 md:px-[18%] bg-guideSectionBg ' >
             <h1 className='font-bold text-3xl pb-6 sm:text-5xl sm:pb-8'>{heading}</h1>
             <div className='pb-4'>
             {
