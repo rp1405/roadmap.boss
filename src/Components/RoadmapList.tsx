@@ -1,0 +1,59 @@
+import React from 'react'
+import ButtonRoadMap from './ButtonRoadMap';
+
+interface Button {
+    label: string;
+    bookmarked:boolean,
+    dotIcon:boolean,
+    showBookmark:boolean,
+    onClick: () => void; 
+}
+
+interface RoadmapListProps {
+    heading: string;
+    buttons: Button[];
+}
+
+const RoadmapList: React.FC<RoadmapListProps> = (props) => {
+
+
+    const {heading, buttons} = props;
+
+    const padd = "px-4 md:px-80"
+
+
+    return (
+
+        <div className='py-10'>
+
+            <div className="flex items-center text-white border-solid pb-16">
+                <hr className="flex-grow  border-slate-500"/>
+                <p className=" rounded-2xl border text-slate-400 border-slate-500 py-2 px-4 text-xl">{heading}</p>
+                <hr className="flex-grow border-slate-500 text-slate-500"/>
+            </div>
+
+            <div className= {'pb-20'+padd}  >
+
+                <div className='grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-2'>
+            
+                    {/* {buttonArr} */}
+                    {
+                        buttons.map((button,idx)=>{
+                            return (<ButtonRoadMap label={button.label}
+                                                   bookmarked={button.bookmarked}
+                                                   dotIcon={button.dotIcon}
+                                                   key={idx} 
+                                                   showBookmark={button.showBookmark}/>)
+                        })
+                    }
+                      
+                </div>
+
+            </div>
+
+        </div>
+        
+    )
+}
+
+export default RoadmapList
