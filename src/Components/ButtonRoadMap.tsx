@@ -10,6 +10,8 @@ interface ButtonProps {
 
 const ButtonRoadMap: React.FC<ButtonProps> = ({label,bookmarked,dotIcon,showBookmark}) => {
 
+  console.log("hi");
+
   return (
       <div className=''>
           <button className='relative bg-headerBgTop border-slate-600 border hover:border-white text-slate-400 py-3 text-left pl-3 pr-64 text-lg sm:text-xl font-semibold rounded-lg lg:w-[350px] sm:w-[99%] w-full'>
