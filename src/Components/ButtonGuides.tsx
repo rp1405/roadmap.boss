@@ -14,25 +14,21 @@ const ButtonGuides: React.FC<ButtonProps> = ({label,isText,isNew,numOfMin}) => {
 
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
-        height: window.innerHeight
       });
     
       const handleResize = () => {
         setWindowSize({
           width: window.innerWidth,
-          height: window.innerHeight
         });
       };
     
       useEffect(() => {
-        // Add event listener when component mounts
         window.addEventListener('resize', handleResize);
     
-        // Remove event listener when component unmounts
         return () => {
           window.removeEventListener('resize', handleResize);
         };
-      }, []); // Empty dependency array ensures that the effect runs only once during mount and cleans up on unmount
+      }, []); 
 
     return (
         <div className='py-2 '>

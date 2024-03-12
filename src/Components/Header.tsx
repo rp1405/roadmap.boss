@@ -2,14 +2,20 @@ import React from 'react'
 import logo from '../Images/logo.jpg'
 import { AlignJustify } from 'lucide-react';
 
+
+
+
 const Header = () => {
 
- 
+   
 
   return (
-    <div className=' text-white pt-10 flex justify-between align-middle pb-8 px-10 md:px-80' >
+
+  
+
+    <div className=' text-white pt-10 flex justify-between align-middle pb-8 px-10 md:px-[14%] w-[1500px]' >
         <div>
-            <ul className='flex space-x-8 items-center text-xl font-normal text-slate-300 '>
+            <ul className='flex space-x-8 items-center text-xl font-normal text-slate-300 text-center'>
                 <li className='hover:text-white'>
                     <img src={logo}></img>
                 </li>
@@ -25,6 +31,7 @@ const Header = () => {
                 <li className='hover:text-white'>
                     We're Hiring
                 </li>
+               
                 
             </ul>
         </div>
