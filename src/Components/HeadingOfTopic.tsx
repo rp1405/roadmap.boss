@@ -11,7 +11,7 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
   topicDescription,
 }) => {
   return (
-    <div className="w-[100vw] flex justify-center">
+    <div className="flex justify-center">
       <div className="w-[70%]">
         <div className="text-5xl font-bold">{topicName}</div>
         <div className="mt-2 text-xl text-[#6C7280]">{topicDescription}</div>
@@ -89,7 +89,7 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
             textColor="black"
           />
           <ButtonFunction
-            className="ml-[35%]"
+            className="ml-[48%]"
             backgroundColor="#4B5563"
             text="Suggest Changes"
             svg={
