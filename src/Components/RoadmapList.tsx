@@ -19,8 +19,6 @@ const RoadmapList: React.FC<RoadmapListProps> = (props) => {
 
     const {heading, buttons} = props;
 
-    const padd = "px-4 md:px-80"
-
 
     return (
 
@@ -33,7 +31,7 @@ const RoadmapList: React.FC<RoadmapListProps> = (props) => {
             </div>
 
             <div className='px-2 md:w-[1200px] lg:w-[1500px] md:mx-auto'>
-                <div className= 'px-2 pb-20 lg:px-[14%] '>
+                <div className= 'px-2 pb-5 lg:px-[14%] '>
 
                     <div className='grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2 lg:gap-2 md:gap-2 gap-2'>
                 

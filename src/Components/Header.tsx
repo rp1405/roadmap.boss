@@ -33,7 +33,7 @@ const Header = () => {
         <div>
             <ul className='flex space-x-8 items-center text-xl font-normal text-slate-300 text-center'>
                 <li className='hover:text-white'>
-                    <img src={logo}></img>
+                    <img src={logo} className='rounded-md'></img>
                 </li>
                 {windowSize.width>600 && <><li className='hover:text-white'>
                     <AlignJustify/>
