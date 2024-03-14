@@ -1,87 +1,90 @@
-import React, { useEffect, useRef } from "react";
-import * as d3 from "d3";
+import React from "react";
+import Tree from "react-d3-tree";
 
-interface TreeNode {
-  id: string;
-  children?: TreeNode[];
-}
-
-interface Props {
-  data: TreeNode;
-}
-
-const TreeChart: React.FC<Props> = ({ data }) => {
-  const svgRef = useRef<SVGSVGElement | null>(null);
-
-  useEffect(() => {
-    if (!svgRef.current) return;
-
-    const svg = d3.select(svgRef.current);
-
-    const width = svgRef.current.clientWidth;
-    const height = svgRef.current.clientHeight;
-
-    const treeLayout = d3.tree<TreeNode>().size([height, width]);
-
-    const root = d3.hierarchy<TreeNode>(data);
-
-    treeLayout(root);
-
-    const links = svg.selectAll(".link").data(root.links());
-    links
-      .enter()
-      .append("path")
-      .attr("class", "link")
-      .attr("d", (d: any) => {
-        return (
-          "M" +
-          d.source.y +
-          "," +
-          d.source.x +
-          "C" +
-          (d.source.y + d.target.y) / 2 +
-          "," +
-          d.source.x +
-          " " +
-          (d.source.y + d.target.y) / 2 +
-          "," +
-          d.target.x +
-          " " +
-          d.target.y +
-          "," +
-          d.target.x
-        );
-      });
-
-    const nodes = svg.selectAll(".node").data(root.descendants());
-    nodes
-      .enter()
-      .append("circle")
-      .attr("class", "node")
-      .attr("cx", (d: any) => d.y)
-      .attr("cy", (d: any) => d.x)
-      .attr("r", 4);
-
-    nodes
-      .enter()
-      .append("text")
-      .attr("dy", "0.31em")
-      .attr("x", (d: any) => d.y + 8)
-      .attr("y", (d: any) => d.x)
-      .text((d: any) => d.data.id);
-  }, [data]);
-
-  return (
-    <svg
-      ref={svgRef}
-      width="100%"
-      height="100%"
-      viewBox="0 0 600 400"
-      style={{ border: "1px solid black" }}
-    >
-      <g transform="translate(40,20)"></g>
-    </svg>
-  );
+// This is a simplified example of an org chart with a depth of 2.
+// Note how deeper levels are defined recursively via the `children` property.
+const data = {
+  name: "Internet",
+  children: [
+    {
+      name: "HTML",
+      children: [
+        {
+          name: "CSS",
+          children: [
+            {
+              name: "JavaScript",
+              children: [
+                {
+                  name: "React.js",
+                  children: [
+                    {
+                      name: "Node.js",
+                      children: [
+                        {
+                          name: "Express.js",
+                          children: [
+                            {
+                              name: "MongoDB",
+                              children: [
+                                {
+                                  name: "Hosting",
+                                  children: [
+                                    {
+                                      name: "Native",
+                                    },
+                                    { name: "Extra1" },
+                                    { name: "Extra2" },
+                                    { name: "Extra3" },
+                                  ],
+                                },
+                                { name: "Extra4" },
+                                { name: "Extra5" },
+                                { name: "Extra6" },
+                              ],
+                            },
+                            { name: "Extra7" },
+                            { name: "Extra8" },
+                            { name: "Extra9" },
+                          ],
+                        },
+                        { name: "Extra10" },
+                        { name: "Extra11" },
+                        { name: "Extra12" },
+                      ],
+                    },
+                    { name: "Extra13" },
+                    { name: "Extra14" },
+                    { name: "Extra15" },
+                  ],
+                },
+                { name: "Extra16" },
+                { name: "Extra17" },
+                { name: "Extra18" },
+              ],
+            },
+            { name: "Extra19" },
+            { name: "Extra20" },
+            { name: "Extra21" },
+          ],
+        },
+        { name: "Extra22" },
+        { name: "Extra23" },
+        { name: "Extra24" },
+      ],
+    },
+    { name: "Extra25" },
+    { name: "Extra26" },
+    { name: "Extra27" },
+  ],
 };
 
-export default TreeChart;
+export default function OrgChartTree() {
+  return (
+    <div className="flex justify-center">
+      <div className="w-[70%] h-[1500px]">
+        <Tree data={data} />
+      </div>
+    </div>
+  );
+}
