@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
 
-    <div className=' text-white pt-10 flex justify-between align-middle pb-2 px-4 md:px-[14%] md:w-[1500px] w-[98%]' >
+    <div className=' text-white pt-10 flex justify-between align-middle pb-2 px-4 md:px-[14%] md:w-[1500px] w-[98%] mx-auto bg-headerBgTop' >
         <div>
             <ul className='flex space-x-8 items-center text-xl font-normal text-slate-300 text-center'>
                 <li className='hover:text-white'>

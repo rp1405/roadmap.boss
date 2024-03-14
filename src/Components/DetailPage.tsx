@@ -4,7 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import HeadingOfTopic from "./HeadingOfTopic";
 import Roadmap from "./Tree";
-import { Tree } from "react-tree-graph";
+
 export default function DetailPage() {
   return (
     <>
