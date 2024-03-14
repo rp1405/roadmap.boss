@@ -13,6 +13,17 @@ function Homepage() {
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
+      isLast:true,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+    {
+      label: "Frontend",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast:true,
       onClick: () => {
         console.log("hello");
       },
@@ -23,6 +34,7 @@ function Homepage() {
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
+      isLast:true,
       onClick: () => {
         console.log("hello");
       },
@@ -33,6 +45,7 @@ function Homepage() {
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
+      isLast:false,
       onClick: () => {
         console.log("hello");
       },
@@ -43,6 +56,7 @@ function Homepage() {
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
+      isLast:false,
       onClick: () => {
         console.log("hello");
       },
@@ -52,21 +66,14 @@ function Homepage() {
       label: "Frontend",
       bookmarked: false,
       dotIcon: false,
-      showBookmark: false,
+      showBookmark: true,
+      isLast:true,
       onClick: () => {
         console.log("hello");
       },
     },
 
-    {
-      label: "Frontend",
-      bookmarked: false,
-      dotIcon: false,
-      showBookmark: false,
-      onClick: () => {
-        console.log("hello");
-      },
-    },
+    
   ];
 
   const buttonsArrayForGuides = [
@@ -153,10 +160,10 @@ function Homepage() {
         </div>
 
         <div>
-          <RoadmapList heading="Role based Roadmaps" buttons={buttonsArray} />
-          <RoadmapList heading="Skill Bases Roadmaps" buttons={buttonsArray} />
-          <RoadmapList heading="Best Practices" buttons={buttonsArray} />
-          <RoadmapList heading="Best Questions" buttons={buttonsArray} />
+          <RoadmapList heading="Role based Roadmaps" buttons={buttonsArray} createYourRoadmap={true} />
+          <RoadmapList heading="Skill Bases Roadmaps" buttons={buttonsArray} createYourRoadmap={true}/>
+          <RoadmapList heading="Best Practices" buttons={buttonsArray} createYourRoadmap={false} />
+          <RoadmapList heading="Best Questions" buttons={buttonsArray} createYourRoadmap={false} />
         </div>
       </div>
       <div>

@@ -5,6 +5,7 @@ import { AlignJustify } from 'lucide-react';
 
 
 
+
 const Header = () => {
 
     const [windowSize, setWindowSize] = useState({
@@ -29,11 +30,11 @@ const Header = () => {
 
   return (
 
-    <div className=' text-white pt-10 flex justify-between align-middle pb-8 px-4 md:px-[14%] md:w-[1500px] w-[98%]' >
+    <div className=' text-white pt-10 flex justify-between align-middle pb-2 px-4 md:px-[14%] md:w-[1500px] w-[98%]' >
         <div>
             <ul className='flex space-x-8 items-center text-xl font-normal text-slate-300 text-center'>
                 <li className='hover:text-white'>
-                    <img src={logo}></img>
+                    <img src={logo} className='rounded-md'></img>
                 </li>
                 {windowSize.width>600 && <><li className='hover:text-white'>
                     <AlignJustify/>
@@ -44,7 +45,7 @@ const Header = () => {
                 <li className='hover:text-white'>
                     Teams
                 </li></>}
-                <li className='hover:text-white'>
+                <li className='hover:text-white text-blue-300'>
                     We're Hiring
                 </li>
                
@@ -58,7 +59,7 @@ const Header = () => {
                     Login
                 </li>
                 <li>
-                    <button className='bg-gradient-to-r from-customColor-light to-customColor-dark pl-10 pr-10 pt-2 pb-2 rounded-3xl'>Sign Up</button>
+                    <button className='bg-gradient-to-r from-blue-500 to-blue-700 pl-10 pr-10 pt-2 pb-2 rounded-3xl'>Sign Up</button>
                 </li>
             </ul> : <AlignJustify className="mt-2"/>}
         </div>
