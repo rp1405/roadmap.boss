@@ -7,23 +7,45 @@ import TagLine from "./TagLine";
 import TreeChart from "./Tree";
 
 function Homepage() {
-  const buttonsArray = [
+  const buttonsArray1 = [
     {
       label: "Frontend",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
-      isLast:true,
+      isLast: true,
       onClick: () => {
         console.log("hello");
       },
     },
     {
-      label: "Frontend",
+      label: "Backend",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
-      isLast:true,
+      isLast: true,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+
+    {
+      label: "Full Stack",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast: true,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+
+    {
+      label: "Android Development",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast: false,
       onClick: () => {
         console.log("hello");
       },
@@ -34,48 +56,89 @@ function Homepage() {
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
-      isLast:true,
+      isLast: false,
       onClick: () => {
         console.log("hello");
       },
     },
 
     {
-      label: "Frontend",
+      label: "C++",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
-      isLast:false,
+      isLast: true,
       onClick: () => {
         console.log("hello");
       },
     },
-
-    {
-      label: "Frontend",
-      bookmarked: false,
-      dotIcon: false,
-      showBookmark: true,
-      isLast:false,
-      onClick: () => {
-        console.log("hello");
-      },
-    },
-
-    {
-      label: "Frontend",
-      bookmarked: false,
-      dotIcon: false,
-      showBookmark: true,
-      isLast:true,
-      onClick: () => {
-        console.log("hello");
-      },
-    },
-
-    
   ];
+  const buttonsArray2 = [
+    {
+      label: "React",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast: true,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+    {
+      label: "Node Js",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast: true,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
 
+    {
+      label: "Vue",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast: true,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+
+    {
+      label: "Python",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast: false,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+
+    {
+      label: "Java",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast: false,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+
+    {
+      label: "AWS",
+      bookmarked: false,
+      dotIcon: false,
+      showBookmark: true,
+      isLast: true,
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+  ];
   const buttonsArrayForGuides = [
     {
       label: "8 In-Demand Backend Developer Skills to Master",
@@ -160,10 +223,16 @@ function Homepage() {
         </div>
 
         <div>
-          <RoadmapList heading="Role based Roadmaps" buttons={buttonsArray} createYourRoadmap={true} />
-          <RoadmapList heading="Skill Bases Roadmaps" buttons={buttonsArray} createYourRoadmap={true}/>
-          <RoadmapList heading="Best Practices" buttons={buttonsArray} createYourRoadmap={false} />
-          <RoadmapList heading="Best Questions" buttons={buttonsArray} createYourRoadmap={false} />
+          <RoadmapList
+            heading="Role based Roadmaps"
+            buttons={buttonsArray1}
+            createYourRoadmap={false}
+          />
+          <RoadmapList
+            heading="Skill Bases Roadmaps"
+            buttons={buttonsArray2}
+            createYourRoadmap={false}
+          />
         </div>
       </div>
       <div>
