@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="pb-8 sm:w-[50%]">
           <div className="flex py-4  items-center">
             <img src={logo} className="w-[6%] rounded-md mr-3" />
-            <p className="text-white text-xl">
+            <p className="text-white text-lg">
               <span className="font-bold">roadmap.college</span> by{" "}
               <span className="bg-blue-500 p-2 rounded-md ml-1">
                 Abhishek Kumar
@@ -42,7 +42,7 @@ const Footer = () => {
           </p>
 
           <div className="flex text-slate-500 text-xl space-x-2 items-center">
-            <p>&copy; roadmap.sh </p>
+            <p>&copy; roadmap.college </p>
             <p>•</p>
             <p>Terms</p>
             <p>•</p>
