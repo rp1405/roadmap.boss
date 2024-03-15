@@ -11,7 +11,7 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
   topicDescription,
 }) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center m-10">
       <div className="w-[70%]">
         <div className="text-5xl font-bold">{topicName}</div>
         <div className="mt-2 text-xl text-[#6C7280]">{topicDescription}</div>

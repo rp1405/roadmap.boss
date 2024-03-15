@@ -1,8 +1,6 @@
 import React from "react";
-import Tree from "react-d3-tree";
+import Tree, { TreeLinkDatum } from "react-d3-tree";
 
-// This is a simplified example of an org chart with a depth of 2.
-// Note how deeper levels are defined recursively via the `children` property.
 const data = {
   name: "Internet",
   children: [
@@ -30,9 +28,7 @@ const data = {
                                 {
                                   name: "Hosting",
                                   children: [
-                                    {
-                                      name: "Native",
-                                    },
+                                    { name: "Native" },
                                     { name: "Extra1" },
                                     { name: "Extra2" },
                                     { name: "Extra3" },
@@ -79,11 +75,40 @@ const data = {
   ],
 };
 
+const pathClassFunc = (linkData: TreeLinkDatum, orientation: String) => {
+  if (linkData.target.children) {
+    return "diagonal";
+  } else {
+    return "step";
+  }
+};
+
 export default function OrgChartTree() {
+  const myTreeConfig = {
+    nodeSize: { x: 200, y: 200 }, // Adjust the size of nodes
+    separation: { siblings: 2, nonSiblings: 2 }, // Adjust the separation between nodes
+    depthFactor: 500, // Adjust the distance between levels
+    translate: { x: 500, y: 50 }, // Adjust the position of the tree
+    orientation: "vertical", // Set the orientation of the tree
+  };
+
   return (
     <div className="flex justify-center">
-      <div className="w-[70%] h-[1500px]">
-        <Tree data={data} />
+      <div className="w-[70%] h-[500px]">
+        <Tree
+          data={data}
+          initialDepth={2}
+          translate={myTreeConfig.translate}
+          nodeSize={myTreeConfig.nodeSize}
+          separation={myTreeConfig.separation}
+          depthFactor={myTreeConfig.depthFactor}
+          orientation={"vertical"}
+          svgClassName="" // Apply custom class to the SVG element
+          leafNodeClassName="bg-red-500" // Apply custom class to leaf nodes
+          branchNodeClassName="branch-node" // Apply custom class to branch nodes
+          pathClassFunc={pathClassFunc} // Apply custom class to paths (links)
+          // pathFunc={"diagonal"}
+        />
       </div>
     </div>
   );
