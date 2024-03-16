@@ -23,7 +23,7 @@ const ControlButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`rounded-lg px-10 py-4 flex items-center border border-${textSvgAndBorderColor} text-${textSvgAndBorderColor} focus:outline-none focus:border-${textSvgAndBorderColor} hover:bg-${textSvgAndBorderColor} hover:text-white hover:bg-black`}
+      className={`rounded-lg px-5 py-4 flex items-center border border-${textSvgAndBorderColor} text-${textSvgAndBorderColor} focus:outline-none focus:border-${textSvgAndBorderColor} hover:bg-${textSvgAndBorderColor} hover:text-white hover:bg-black`}
     >
       <span className="hidden md:inline-block whitespace-nowrap font-semibold">
         {text}
@@ -34,13 +34,13 @@ const ControlButton: React.FC<ButtonProps> = ({
 };
 const Question: React.FC<QuestionProps> = ({ question }) => {
   return (
-    <div className="w-[70%] mt-10">
+    <div className="w-[90%]  md:w-[70%] mt-10">
       <div className="border-2 border-[#D1D5DA] rounded-lg items-center flex flex-col py-10 h-[500px] justify-between">
         <div className="text-[#6A7280] font-semibold text-center">{`${question.subTopic} ${question.level}`}</div>
-        <div className="font-bold text-3xl text-center">
+        <div className="font-bold text-2xl md:text-3xl text-center">
           {question.statement}
         </div>
-        <div className="text-[#6A7280] font-semibold text-center text-xl underline underline-offset-4">
+        <div className="text-[#6A7280] font-semibold text-center text-lg md:text-xl underline underline-offset-4">
           Click To Reveal the Answer
         </div>
       </div>
@@ -127,9 +127,9 @@ const Quiz = () => {
     <>
       <Header />
       <div className="w-[100vw] flex justify-center my-10">
-        <div className="w-[70%] flex flex-col items-center">
-          <h1 className="font-bold text-5xl">{`${quizTopic} Questions`}</h1>
-          <h2 className="mt-5 font-semibold text-xl text-[#6A7280]">{`Test, rate and improve your ${quizTopic} knowledge with these questions.`}</h2>
+        <div className="w-[90%] md:w-[70%] flex flex-col items-center text-center">
+          <h1 className="font-bold text-3xl md:text-5xl">{`${quizTopic} Questions`}</h1>
+          <h2 className="mt-5 font-semibold text-lg md:text-xl text-[#6A7280]">{`Test, rate and improve your ${quizTopic} knowledge with these questions.`}</h2>
           <Question question={questions[questionNo]} />
         </div>
       </div>
