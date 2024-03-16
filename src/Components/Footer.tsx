@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="pb-8 sm:w-[50%]">
           <div className="flex py-4  items-center">
             <img src={logo} className="w-[6%] rounded-md mr-3" />
-            <p className="text-white text-lg">
+            <p className="text-white text-[16px] md:text-lg">
               <span className="font-bold">roadmap.college</span> by{" "}
               <span className="bg-blue-500 p-2 rounded-md ml-1">
                 Abhishek Kumar
