@@ -17,7 +17,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-headerBgBottom to-headerBgTop px-[3%] py-10 sm:px-[18%]">
+    <div className="bg-gradient-to-b from-headerBgBottom to-headerBgTop px-[3%] py-10 sm:px-[18%] w-[100vw]">
       <div className="mb-10 sm:flex sm:justify-around sm:px-[15%]">
         {buttonLabels.map((val) => {
           return <ButtonFooter label={val} key={val} />;
