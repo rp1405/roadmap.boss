@@ -4,7 +4,6 @@ import GuidesSection from "./GuidesSection";
 import Header from "./Header";
 import RoadmapList from "./RoadmapList";
 import TagLine from "./TagLine";
-import TreeChart from "./Tree";
 
 function Homepage() {
   const buttonsArray1 = [
