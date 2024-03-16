@@ -17,11 +17,11 @@ const ButtonFunction: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`flex items-center justify-center px-3 py-2 rounded mt-3 ${className}`}
+      className={`flex items-center justify-center px-3 py-2 rounded mt-3 whitespace-nowrap hover:brightness-50 ${className}`}
       style={{ backgroundColor: backgroundColor, color: textColor }}
     >
-      <div>{svg}</div>
-      <span className="ml-3 text-md font-bold">{text}</span>
+      <div className="ml-1 mr-1">{svg}</div>
+      <span className="text-md font-bold hidden md:block">{text}</span>
     </button>
   );
 };

@@ -35,8 +35,8 @@ const questions: Question[] = [
 
 const FAQ: React.FC = () => {
   return (
-    <div className="flex justify-center">
-      <div className="w-[70%]">
+    <div className="flex justify-center mt-5">
+      <div className="w-[90%] md:w-[70%]">
         <h2 className="text-3xl font-bold">Frequently asked questions</h2>
         <section className="faq">
           {questions.map((item) => (

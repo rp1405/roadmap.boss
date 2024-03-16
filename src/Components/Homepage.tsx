@@ -10,6 +10,7 @@ function Homepage() {
   const buttonsArray1 = [
     {
       label: "Frontend",
+      routeTo: "frontend",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -20,6 +21,7 @@ function Homepage() {
     },
     {
       label: "Backend",
+      routeTo: "backend",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -28,9 +30,9 @@ function Homepage() {
         console.log("hello");
       },
     },
-
     {
       label: "Full Stack",
+      routeTo: "fullstack",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -39,9 +41,9 @@ function Homepage() {
         console.log("hello");
       },
     },
-
     {
       label: "Android Development",
+      routeTo: "android",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -50,9 +52,9 @@ function Homepage() {
         console.log("hello");
       },
     },
-
     {
       label: "Frontend",
+      routeTo: "frontend2",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -61,9 +63,9 @@ function Homepage() {
         console.log("hello");
       },
     },
-
     {
       label: "C++",
+      routeTo: "cplusplus",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -73,9 +75,11 @@ function Homepage() {
       },
     },
   ];
+
   const buttonsArray2 = [
     {
       label: "React",
+      routeTo: "react",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -86,6 +90,7 @@ function Homepage() {
     },
     {
       label: "Node Js",
+      routeTo: "nodejs",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -94,9 +99,9 @@ function Homepage() {
         console.log("hello");
       },
     },
-
     {
       label: "Vue",
+      routeTo: "vue",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -105,9 +110,9 @@ function Homepage() {
         console.log("hello");
       },
     },
-
     {
       label: "Python",
+      routeTo: "python",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -116,9 +121,9 @@ function Homepage() {
         console.log("hello");
       },
     },
-
     {
       label: "Java",
+      routeTo: "java",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -127,9 +132,9 @@ function Homepage() {
         console.log("hello");
       },
     },
-
     {
       label: "AWS",
+      routeTo: "aws",
       bookmarked: false,
       dotIcon: false,
       showBookmark: true,
@@ -139,6 +144,7 @@ function Homepage() {
       },
     },
   ];
+
   const buttonsArrayForGuides = [
     {
       label: "8 In-Demand Backend Developer Skills to Master",

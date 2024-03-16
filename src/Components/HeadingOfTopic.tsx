@@ -11,11 +11,13 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
   topicDescription,
 }) => {
   return (
-    <div className="flex justify-center m-10">
-      <div className="w-[70%]">
-        <div className="text-5xl font-bold">{topicName}</div>
-        <div className="mt-2 text-xl text-[#6C7280]">{topicDescription}</div>
-        <div className="flex flex-row">
+    <div className="flex justify-center w-[100vw] mt-10">
+      <div className="w-[90%] md:w-[70%]">
+        <div className="text-3xl md:text-5xl font-bold">{topicName}</div>
+        <div className="mt-2 text-lg md:text-xl text-[#6C7280] ">
+          {topicDescription}
+        </div>
+        <div className="flex flex-row justify-between">
           <ButtonFunction
             backgroundColor="#4B5563"
             text="All Roadmaps"
@@ -40,7 +42,7 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
           />
           <ButtonFunction
             className="ml-[1.5%]"
-            backgroundColor="#EAB30A"
+            backgroundColor="#FACC14"
             text="Share"
             svg={
               <svg
@@ -66,7 +68,7 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
           />
           <ButtonFunction
             className="ml-[1.5%]"
-            backgroundColor="#EAB30A"
+            backgroundColor="#FACC14"
             text="Download"
             svg={
               <svg
@@ -89,7 +91,7 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
             textColor="black"
           />
           <ButtonFunction
-            className="ml-[48%]"
+            className="ml-auto"
             backgroundColor="#4B5563"
             text="Suggest Changes"
             svg={
