@@ -46,7 +46,7 @@ const CommunityStats: React.FC<CommnunityStatsProps> = (props) => {
                 </div>
 
     return (
-        <div className={`${isBorder?'sm:border-l-2 sm:border-r-2':'border-0'} `}>
+        <div className={`${isBorder?'sm:border-l-2':'border-0'} `}>
             <div className='w-full bg-guideSectionBg sm:py-2 sm:px-4 rounded-lg my-4 sm:bg-white p-4'>
                 <h1 className='text-xl text-blue-500 mb-8'><span className='bg-blue-500 text-white rounded-md p-1 m-1'>{blueBgText}</span>{notBlueBgText}</h1>
                 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import OverlayDiv from "./OverlayDiv";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -107,6 +108,13 @@ const topics = [
   },
 ];
 const Timeline = () => {
+
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  const toggleOverlay = () => {
+    setShowOverlay(!showOverlay);
+  };
+
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
   });
@@ -148,11 +156,20 @@ const Timeline = () => {
                 {topic.title}
               </h1>
               {topic.subTopics.map((obj, ind) => (
-                <p>{obj}</p>
+                <p onClick={toggleOverlay}>{obj}</p>
               ))}
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
+        {showOverlay && (
+          <div
+            className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-50"
+            onClick={toggleOverlay}
+          ></div>
+        )}
+        {showOverlay && <OverlayDiv onClose={toggleOverlay}
+                                    heading={"hello world"}
+                                    paragraph={"hello world paragraph"} />}
       </div>
     </div>
   );
