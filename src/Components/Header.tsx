@@ -25,7 +25,7 @@ const Header = () => {
   const [showDiv, setShowDiv] = useState(false);
 
   const handleButtonClick = () => {
-    console.log("hi")
+    
     setShowDiv(!showDiv);
   };
 
