@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../Images/logo.jpg";
-import { AlignJustify } from "lucide-react";
+import { AlignJustify, X } from "lucide-react";
 
 const Header = () => {
   const [windowSize, setWindowSize] = useState({
@@ -21,6 +21,13 @@ const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const [showDiv, setShowDiv] = useState(false);
+
+  const handleButtonClick = () => {
+    
+    setShowDiv(!showDiv);
+  };
 
   return (
     <div className=" text-white pt-5 pb-5 flex justify-between align-middle px-4 md:px-[14%] w-[100vw] bg-headerBgTop">
@@ -53,9 +60,26 @@ const Header = () => {
             </li>
           </ul>
         ) : (
-          <AlignJustify className="mt-2" />
+          <button onClick={handleButtonClick}><AlignJustify className="mt-2" /></button>
         )}
       </div>
+      {showDiv && (
+
+        <div>
+          
+          <div className="fixed top-0 left-0 w-full h-full bg-headerBgTop flex justify-center items-center z-50 text-center">
+              <ul className="text-lg ">
+                <li className="absolute right-10 top-10 " onClick={handleButtonClick}><X/></li>
+                <li>Roadmaps</li>
+                <li>Best Practices</li>
+                <li>Guides</li>
+                <li>Videos</li>
+                <li>Login</li>
+                <li className="text-green-500">Signup</li>
+              </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
