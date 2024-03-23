@@ -102,12 +102,12 @@ const Header = () => {
       <div>
         {windowSize.width > 600 ? (
           <ul className="flex space-x-8 items-center text-xl font-normal text-slate-300">
-            {/* <li className="hover:text-white"><button>Login</button></li>
+            <li className="hover:text-white"><button onClick={()=> alert("Coming Soon")}>Login</button></li>
             <li>
-              <button className="bg-gradient-to-r from-blue-500 to-blue-700 pl-10 pr-10 pt-2 pb-2 rounded-3xl">
+              <button onClick={()=> alert("Coming Soon")} className="bg-gradient-to-r from-blue-500 to-blue-700 pl-10 pr-10 pt-2 pb-2 rounded-3xl">
                 Sign Up
               </button>
-            </li> */}
+            </li>
           </ul>
         ) : (
           <button onClick={handleButtonClick}><AlignJustify className="mt-2" /></button>
