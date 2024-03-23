@@ -20,14 +20,12 @@ const ButtonFooter: React.FC<Props> = ({label}) => {
       };
     
       useEffect(() => {
-        // Add event listener when component mounts
         window.addEventListener('resize', handleResize);
-    
-        // Remove event listener when component unmounts
         return () => {
           window.removeEventListener('resize', handleResize);
         };
-      }, []); // Empty dependency array ensures that the effect runs only once during mount and cleans up on unmount
+      }, []); 
+      
     return (
         <div>
             <button className='text-slate-400 text-xl py-2 font-semibold hover:text-white'>

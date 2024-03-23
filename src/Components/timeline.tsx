@@ -5,6 +5,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { Link } from "react-router-dom";
 const topics = [
   {
     title: "HTML",
@@ -156,7 +157,7 @@ const Timeline = () => {
                 {topic.title}
               </h1>
               {topic.subTopics.map((obj, ind) => (
-                <p onClick={toggleOverlay}>{obj}</p>
+                <Link to="#"><p className="hover:text-yellow-300" onClick={toggleOverlay}>{obj}</p></Link>
               ))}
             </VerticalTimelineElement>
           ))}

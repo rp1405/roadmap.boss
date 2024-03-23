@@ -1,5 +1,6 @@
 import React from 'react'
 import ButtonGuides from './ButtonGuides';
+import { Link } from 'react-router-dom';
 
 
 interface Button {
@@ -34,7 +35,7 @@ const GuidesSection: React.FC<GuidesSectionProps> = (props) => {
                 })
             }
             </div>
-            <button className='border border-black hover:bg-blue-500 w-full py-2 rounded-md text-xl sm:rounded-3xl sm:w-44 sm:text-lg sm:bg-gradient-to-r from-viewAllLeft to-viewAllRight sm:text-white '>View All {heading} →</button>
+            <Link to={`/${heading.toLowerCase()}`}><button className='border border-black hover:bg-blue-500 w-full py-2 rounded-md text-xl sm:rounded-3xl sm:w-44 sm:text-lg sm:bg-gradient-to-r from-viewAllLeft to-viewAllRight sm:text-white '>View All {heading} →</button></Link>
         </div>
     )
 }

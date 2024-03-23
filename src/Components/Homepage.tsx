@@ -44,7 +44,7 @@ function Homepage() {
       label: "Android Development",
       routeTo: "android",
       bookmarked: false,
-      dotIcon: false,
+      dotIcon: true,
       showBookmark: true,
       isLast: false,
       onClick: () => {
@@ -66,7 +66,7 @@ function Homepage() {
       label: "C++",
       routeTo: "cplusplus",
       bookmarked: false,
-      dotIcon: false,
+      dotIcon: true,
       showBookmark: true,
       isLast: true,
       onClick: () => {
@@ -155,7 +155,7 @@ function Homepage() {
       },
     },
     {
-      label: "8 In-Demand Backend Developer Skills to Master",
+      label: "Introduction to LLMs",
       isNew: false,
       isText: true,
       numOfMin: "50",
@@ -164,7 +164,7 @@ function Homepage() {
       },
     },
     {
-      label: "8 In-Demand Backend Developer Skills to Master",
+      label: "5 Free Resources to Master LLMs",
       isNew: false,
       isText: true,
       numOfMin: "50",
@@ -184,7 +184,7 @@ function Homepage() {
       },
     },
     {
-      label: "Session Based Authentication",
+      label: "Basic Authentication",
       isNew: false,
       isText: false,
       numOfMin: "50",
@@ -193,7 +193,16 @@ function Homepage() {
       },
     },
     {
-      label: "Session Based Authentication",
+      label: "Basics of Authentication",
+      isNew: false,
+      isText: false,
+      numOfMin: "50",
+      onClick: () => {
+        console.log("hello");
+      },
+    },
+    {
+      label: "Graph Data Structure",
       isNew: false,
       isText: false,
       numOfMin: "50",

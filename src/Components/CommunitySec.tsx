@@ -131,14 +131,6 @@ const CommunitySec = () => {
           );
         })}
 
-        {/* <div className='w-full bg-guideSectionBg p-2 my-4 sm:bg-white  sm:border-l-2 sm:border-r-2'>
-                    <h1 className='text-xl text-blue-500'><span className='bg-blue-500 text-white rounded-md p-1'>Rank 6th</span> put of 28M!</h1>
-                    <h1 className='py-5 text-2xl'><span className='font-bold'>258k</span> <span>GitHub Stars</span></h1>
-                    <button className='p-2 bg-white border border-black rounded-md w-60'>
-                        <p className='font-semibold text-lg'>★ Star us on GitHub</p>
-                        <p className='text-base text-slate-500'>Help us reach #1</p>
-                    </button>
-                </div> */}
       </div>
     </div>
   );
