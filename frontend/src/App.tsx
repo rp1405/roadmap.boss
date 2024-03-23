@@ -14,7 +14,9 @@ function App() {
       <Route path="/quiz">
         <Route path=":id" element={<Quiz />} />
       </Route>
-      <Route path="/:section" element={<ViewAllGuides />}></Route>
+      <Route path="/learn">
+        <Route path=":section" element={<DetailPage />} />
+      </Route>
     </Routes>
   );
 }
