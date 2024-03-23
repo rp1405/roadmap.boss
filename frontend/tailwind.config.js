@@ -12,6 +12,8 @@ module.exports = {
         viewAllLeft: "#445265",
         viewAllRight: "#040406",
         guideSectionBg: "#F9FAFB",
+        alignJustifyOverlayBg: "#1E293B",
+        overlayHoverColor:'#313F53',
         // Replace with your desired color code
       },
     },
