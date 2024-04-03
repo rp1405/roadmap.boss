@@ -1,21 +1,25 @@
 import React from "react";
 import ButtonFunction from "./ButtonFunc";
+import { useNavigate, useParams } from "react-router-dom";
+import { AllCourses, urlToCourseData } from "./SiteData/courses";
 
 interface HeadingOfTopicProps {
-  topicName: string;
-  topicDescription: string;
+  courseHeading: string;
+  courseDescription: string;
 }
 
 const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
-  topicName,
-  topicDescription,
+  courseHeading,
+  courseDescription,
 }) => {
+  const navigate = useNavigate();
+  const params = useParams();
   return (
     <div className="flex justify-center w-[100vw] mt-10">
       <div className="w-[90%] md:w-[70%]">
-        <div className="text-3xl md:text-5xl font-bold">{topicName}</div>
+        <div className="text-3xl md:text-5xl font-bold">{courseHeading}</div>
         <div className="mt-2 text-lg md:text-xl text-[#6C7280] ">
-          {topicDescription}
+          {courseDescription}
         </div>
         <div className="flex flex-row justify-between">
           <ButtonFunction
@@ -39,6 +43,7 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
               </svg>
             }
             textColor="white"
+            onClick={() => {}}
           />
           <ButtonFunction
             className="ml-[1.5%]"
@@ -64,12 +69,13 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
                 <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" />
               </svg>
             }
+            onClick={() => {}}
             textColor="black"
           />
           <ButtonFunction
             className="ml-[1.5%]"
             backgroundColor="#FACC14"
-            text="Download"
+            text="Go To Quiz"
             svg={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,17 +83,20 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="black"
+                stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                className="lucide lucide-download"
+                className="lucide lucide-file-question"
               >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" x2="12" y1="15" y2="3" />
+                <path d="M12 17h.01" />
+                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" />
+                <path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3" />
               </svg>
             }
+            onClick={() => {
+              navigate(`../../quiz/${params.id}`);
+            }}
             textColor="black"
           />
           <ButtonFunction
@@ -110,6 +119,7 @@ const HeadingOfTopic: React.FC<HeadingOfTopicProps> = ({
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
             }
+            onClick={() => {}}
             textColor="white"
           />
         </div>

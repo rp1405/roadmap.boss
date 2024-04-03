@@ -4,6 +4,7 @@ import Homepage from "./Components/Homepage";
 import DetailPage from "./Components/DetailPage";
 import Quiz from "./Components/Quiz";
 import ViewAllGuides from "./Components/ViewAllGuides";
+import LoginSuccessPage from "./Components/LoginSuccessPage";
 function App() {
   return (
     <Routes>
@@ -17,6 +18,7 @@ function App() {
       <Route path="/learn">
         <Route path=":section" element={<ViewAllGuides />} />
       </Route>
+      <Route path="/login/success" element={<LoginSuccessPage />} />
     </Routes>
   );
 }

@@ -6,6 +6,7 @@ interface ButtonProps {
   svg: React.ReactNode;
   textColor: string;
   className?: string;
+  onClick: () => void;
 }
 
 const ButtonFunction: React.FC<ButtonProps> = ({
@@ -14,11 +15,13 @@ const ButtonFunction: React.FC<ButtonProps> = ({
   svg,
   textColor,
   className,
+  onClick,
 }) => {
   return (
     <button
       className={`flex items-center justify-center px-3 py-2 rounded mt-3 whitespace-nowrap hover:brightness-50 ${className}`}
       style={{ backgroundColor: backgroundColor, color: textColor }}
+      onClick={onClick}
     >
       <div className="ml-1 mr-1">{svg}</div>
       <span className="text-md font-bold hidden md:block">{text}</span>
