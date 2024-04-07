@@ -13,23 +13,7 @@ const passport = require("passport");
 const app = express();
 
 const cors = require("cors");
-
-const corsOptions = {
-  origin: (origin, callback) => {
-    callback(null, true);
-  },
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  allowedHeaders: [
-    "Access-Control-Allow-Origin",
-    "Origin",
-    "X-Requested-With",
-    "Content-Type",
-    "Accept",
-    "Authorization",
-  ],
-};
-app.options("*", cors(corsOptions));
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(
   cookieSession({
