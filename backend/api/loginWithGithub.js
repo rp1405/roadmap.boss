@@ -4,8 +4,8 @@ const { isUserAuthenticated } = require("../middlewares/auth");
 
 const router = express.Router();
 
-const successLoginUrl = "http://localhost:3000/login/success";
-const errorLoginUrl = "http://localhost:3000/login/error";
+const successLoginUrl = `${process.env.FRONTEND_URL}/login/success`;
+const errorLoginUrl = `${process.env.FRONTEND_URL}/login/error`;
 
 router.get(
   "/login/github",

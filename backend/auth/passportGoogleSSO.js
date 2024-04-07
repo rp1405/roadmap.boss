@@ -3,7 +3,7 @@ const GoogleStrategy = require("passport-google-oidc").Strategy;
 
 const User = require("../models/User");
 
-const GOOGLE_CALLBACK_URL = "http://localhost:4000/api/v1/auth/google/callback";
+const GOOGLE_CALLBACK_URL = `${process.env.THIS_URL}/api/v1/auth/google/callback`;
 
 passport.use(
   new GoogleStrategy(

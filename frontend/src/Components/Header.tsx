@@ -115,10 +115,10 @@ const Header = () => {
   };
   const redirectToGithubSSO = async () => {
     let timer: NodeJS.Timeout | null = null;
-    const googleLoginURL =
+    const githubLoginURL =
       process.env.REACT_APP_BACKEND_URL + "/api/v1/login/github";
     const newWindow = window.open(
-      googleLoginURL,
+      githubLoginURL,
       "_blank",
       "width=500,height=600"
     );

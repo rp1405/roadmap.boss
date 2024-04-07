@@ -2,7 +2,7 @@ const passport = require("passport");
 const GitHubStrategy = require("passport-github").Strategy; // Import GitHubStrategy
 const User = require("../models/User");
 
-const GITHUB_CALLBACK_URL = "http://localhost:4000/api/v1/auth/github/callback";
+const GITHUB_CALLBACK_URL = `${process.env.THIS_URL}/api/v1/auth/github/callback`;
 
 passport.use(
   new GitHubStrategy(
