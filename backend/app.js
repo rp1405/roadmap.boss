@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const cors = require("cors");
+
 const cookieSession = require("cookie-session");
 require("./auth/passportGoogleSSO");
 require("./auth/passportGithubSSO");
@@ -11,7 +11,27 @@ const userRoute = require("./api/user");
 const passport = require("passport");
 
 const app = express();
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
+
+const cors = require("cors");
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    callback(null, true);
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: [
+    "Access-Control-Allow-Origin",
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+  ],
+  credentials: true,
+};
+
+app.options("*", cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(
   cookieSession({
