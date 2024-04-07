@@ -83,7 +83,6 @@ const Header = () => {
       .catch((err) => {
         console.log("Not properly authenticated");
         dispatch(setIsAuthenticated(false));
-        // dispatch(setUser(null));
       });
     if (response && response.data) {
       console.log("User: ", response.data);
