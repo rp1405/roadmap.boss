@@ -13,12 +13,7 @@ const passport = require("passport");
 const app = express();
 
 const cors = require("cors");
-app.use(
-  cors({
-    credentials: true,
-    origin: "https://roadp-boss-7jov.vercel.app",
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use(
   cookieSession({
