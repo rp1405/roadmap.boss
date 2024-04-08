@@ -16,7 +16,7 @@ const cors = require("cors");
 app.use(
   cors({
     credentials: true,
-    origin: "https://roadmap-boss-7jov.vercel.app",
+    origin: "https://roadp-boss-7jov.vercel.app",
   })
 );
 app.use(express.json());
