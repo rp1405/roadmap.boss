@@ -81,7 +81,7 @@ const Header = () => {
         withCredentials: true,
       })
       .catch((err) => {
-        console.log("Not properly authenticated");
+        console.log("Not properly authenticated", err);
         dispatch(setIsAuthenticated(false));
       });
     if (response && response.data) {
