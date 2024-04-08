@@ -62,7 +62,6 @@ export const addCompletedCourse = createAsyncThunk(
     }
   }
 );
-
 export const deleteCompletedCourse = createAsyncThunk(
   "DeleteCompletedCourse",
   async (payload: CourseDetails, { getState }) => {
