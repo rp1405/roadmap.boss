@@ -13,7 +13,7 @@ const passport = require("passport");
 const app = express();
 
 const cors = require("cors");
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(
   cookieSession({
