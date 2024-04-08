@@ -13,11 +13,7 @@ const passport = require("passport");
 const app = express();
 
 const cors = require("cors");
-app.use(
-  cors({
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use(
   cookieSession({
