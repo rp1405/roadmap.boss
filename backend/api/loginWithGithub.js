@@ -15,6 +15,7 @@ router.get(
 router.get(
   "/auth/github/callback",
   passport.authenticate("github", {
+    session: true,
     failureMessage: "Cannot login to Github, please try again later!",
     failureRedirect: errorLoginUrl,
     successRedirect: successLoginUrl,
