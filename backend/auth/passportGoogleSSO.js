@@ -1,5 +1,5 @@
 const passport = require("passport");
-const GoogleStrategy = require("passport-google-oidc").Strategy;
+const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 const User = require("../models/User");
 
@@ -13,7 +13,7 @@ passport.use(
       callbackURL: GOOGLE_CALLBACK_URL,
       passReqToCallback: true,
     },
-    async (cb, issuer, profile) => {
+    async (request, accessToken, refreshToken, profile, done) => {
       const userDetails = {
         name: profile.displayName,
         googleId: profile.emails[0].value,
