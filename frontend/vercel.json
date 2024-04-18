@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "https://roadmap-boss-7jov.vercel.app/api/:path*"
-    }
-  ]
-}
