@@ -15,6 +15,7 @@ export type QuestionDetails = {
 
 // Define state type
 export type UserState = {
+  accessToken: string;
   isAuthenticated: boolean;
   _id: string;
   name: string;
@@ -27,6 +28,7 @@ export type UserState = {
 
 // Initial state
 export const initialState: UserState = {
+  accessToken: "",
   isAuthenticated: false,
   _id: "",
   name: "",
@@ -36,104 +38,6 @@ export const initialState: UserState = {
   completedCourses: {},
   completedQuestions: {},
 };
-
-// Async thunk for adding completed course
-export const addCompletedCourse = createAsyncThunk(
-  "AddCompletedSubtopic",
-  async (payload: CourseDetails, { getState }) => {
-    const user = (getState() as { user: UserState }).user;
-    const { _id } = user;
-    try {
-      const response = await axios.patch(
-        process.env.REACT_APP_BACKEND_URL + "/api/v1/addCompletedSubtopic",
-        {
-          _id,
-          completedSubtopic: JSON.stringify(payload),
-        },
-        {
-          withCredentials: true, // Include credentials in the request
-        }
-      );
-      console.log("HEREREREER");
-      return response.data; // You might want to return something if needed
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-  }
-);
-export const deleteCompletedCourse = createAsyncThunk(
-  "DeleteCompletedCourse",
-  async (payload: CourseDetails, { getState }) => {
-    const user = (getState() as { user: UserState }).user;
-    const { _id } = user;
-    try {
-      const response = await axios.patch(
-        process.env.REACT_APP_BACKEND_URL + "/api/v1/deleteCompletedSubtopic",
-        {
-          _id,
-          subtopicToDelete: JSON.stringify(payload),
-        },
-        {
-          withCredentials: true, // Include credentials in the request
-        }
-      );
-      return response.data; // You might want to return something if needed
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-  }
-);
-
-// Async thunk for adding completed question
-// export const addCompletedQuestion = createAsyncThunk(
-//   "AddCompletedQuestion",
-//   async (payload: QuestionDetails, { getState }) => {
-//     const user = (getState() as { user: UserState }).user;
-//     const { _id } = user;
-//     try {
-//       const response = await axios.patch(
-//         process.env.REACT_APP_BACKEND_URL + "/api/v1/addCompletedQuestion",
-//         {
-//           _id,
-//           completedQuestion: JSON.stringify(payload),
-//         },
-//         {
-//           withCredentials: true, // Include credentials in the request
-//         }
-//       );
-//       return response.data; // You might want to return something if needed
-//     } catch (error) {
-//       console.log(error);
-//       throw error;
-//     }
-//   }
-// );
-export const deleteCompletedQuestion = createAsyncThunk(
-  "DeleteCompletedQuestion",
-  async (payload: QuestionDetails, { getState }) => {
-    const user = (getState() as { user: UserState }).user;
-    const { _id } = user;
-    try {
-      const response = await axios.patch(
-        process.env.REACT_APP_BACKEND_URL + "/api/v1/deleteCompletedQuestion",
-        {
-          _id,
-          questionToDelete: JSON.stringify(payload),
-        },
-        {
-          withCredentials: true, // Include credentials in the request
-        }
-      );
-      return response.data; // You might want to return something if needed
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-  }
-);
-
 // Slice
 const userSlice = createSlice({
   name: "userDetails",
@@ -144,6 +48,9 @@ const userSlice = createSlice({
     },
     setIsAuthenticated(state, { payload }) {
       state.isAuthenticated = payload;
+    },
+    setAccessToken(state, { payload }) {
+      state.accessToken = payload;
     },
     addCompletedCourseLocal(state, { payload }) {
       return {
@@ -178,20 +85,13 @@ const userSlice = createSlice({
       };
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(addCompletedCourse.fulfilled, (state, action) => {
-      addCompletedCourseLocal(JSON.stringify(action.payload));
-    });
-    // builder.addCase(addCompletedQuestion.fulfilled, (state, action) => {
-    //   state.completedCourses[action.payload] = false;
-    // });
-  },
 });
 
 // Export actions
 export const {
   setUser,
   setIsAuthenticated,
+  setAccessToken,
   addCompletedCourseLocal,
   deleteCompletedCourseLocal,
   addCompletedQuestionLocal,

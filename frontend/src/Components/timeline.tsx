@@ -45,7 +45,10 @@ const Timeline = () => {
           completedSubtopic: JSON.stringify(courseTopicSubTopicTuple),
         },
         {
-          withCredentials: true, // Include credentials in the request
+          headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+            "Content-Type": "application/json",
+          },
         }
       );
       return response.data; // You might want to return something if needed
@@ -66,7 +69,10 @@ const Timeline = () => {
           subtopicToDelete: JSON.stringify(courseTopicSubTopicTuple),
         },
         {
-          withCredentials: true, // Include credentials in the request
+          headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+            "Content-Type": "application/json",
+          },
         }
       );
       return response.data; // You might want to return something if needed

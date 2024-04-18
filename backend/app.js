@@ -1,15 +1,8 @@
 const express = require("express");
 require("dotenv").config();
-
 const cookieSession = require("cookie-session");
-require("./auth/passportGoogleSSO");
-require("./auth/passportGithubSSO");
-const middlewares = require("./middlewares");
-const loginWithGoogle = require("./api/loginWithGoogle");
-const loginWithGithub = require("./api/loginWithGithub");
-const userRoute = require("./api/user");
-const passport = require("passport");
-
+const middlewares = require("./middlewares/middlewares");
+const { isUserAuthenticated } = require("./middlewares/auth");
 const app = express();
 
 const cors = require("cors");
@@ -21,13 +14,9 @@ app.use(
     keys: [process.env.COOKIE_KEY],
   })
 );
-// Define a route
-
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.get("/", (req, res) => {
   res.json({
@@ -44,6 +33,10 @@ app.post("/logout", function (req, res, next) {
   });
   res.json("Logged Out Successfully!");
 });
+
+const apiV1Router = express.Router();
+apiV1Router.use(isUserAuthenticated);
+app.use("/api/v1", apiV1Router);
 //For every new database we make
 const userDataRouter = require("./controllers/UserData");
 const quizDataRouter = require("./controllers/QuizData");
@@ -51,10 +44,6 @@ const courseDataRouter = require("./controllers/CourseData");
 app.use("/api/v1", courseDataRouter);
 app.use("/api/v1", quizDataRouter);
 app.use("/api/v1", userDataRouter);
-
-app.use("/api/v1", loginWithGoogle);
-app.use("/api/v1", loginWithGithub);
-app.use("/api/v1", userRoute);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);

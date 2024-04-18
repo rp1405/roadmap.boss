@@ -3,6 +3,21 @@ const router = express.Router();
 const User = require("../models/User");
 const mongoose = require("mongoose");
 // GET user data by ID
+
+router.post("/userAuthentication", async (req, res) => {
+  try {
+    const userDetails = req.body;
+    const email = req.body.email;
+    const user = await User.findOneAndUpdate(
+      { email: userDetails.email }, // Define the query criteria
+      { $setOnInsert: userDetails }, // Set defaults if document is inserted
+      { upsert: true, new: true } // Create new document if not found, return the updated document
+    );
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(500).json({ message: err.message });
+  }
+});
 router.get("/getUserById", async (req, res) => {
   try {
     const user = await User.findById(req.query.id);
@@ -26,10 +41,10 @@ router.get("/getUserByEmail", async (req, res) => {
   try {
     const email = req.query.email; // Get the email address from the query parameters
     console.log(email);
-    const user = await User.findOne({ email }); // Search for the user by email address
+    const user = await User.findOne({ email: email }); // Search for the user by email address
     if (!user) {
       // If user not found, return 404
-      return res.status(404).json({ message: "User not found" });
+      return res.json("NULL");
     }
     res.json(user); // Return the user if found
   } catch (err) {

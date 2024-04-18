@@ -149,6 +149,12 @@ const QuestionProp: React.FC<QuestionProps> = ({
                     topicName: topicName,
                     question: question,
                   }),
+                },
+                {
+                  headers: {
+                    Authorization: `Bearer ${user.accessToken}`,
+                    "Content-Type": "application/json",
+                  },
                 }
               );
               dispatch(
