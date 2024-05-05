@@ -14,6 +14,7 @@ import {
 } from "../slices/userSlice";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { getAuth } from "firebase/auth";
 
 interface User {
   uid: string;
@@ -26,10 +27,11 @@ const authenticateUser = async (
   accessToken: string
 ) => {
   try {
-    const email = result.user.email;
+    const uid = result.user.uid;
     const userDetails = {
+      uid: uid,
       name: result.user.displayName,
-      email: email,
+      email: result.user.email,
       mobileNumber: result.user.phoneNumber,
       completedCourses: {},
       completedQuestions: {},
@@ -55,6 +57,9 @@ const GoogleSignIn = () => {
   const dispatch = useDispatch();
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+      prompt: "select_account",
+    });
     try {
       const result: any = await signInWithPopup(auth, provider);
       const accessToken = result.user.accessToken;
@@ -110,6 +115,9 @@ const GithubSignIn = () => {
   const dispatch = useDispatch();
   const handleGithubSignIn = async () => {
     const provider = new GithubAuthProvider();
+    provider.setCustomParameters({
+      prompt: "select_account",
+    });
     try {
       const result: any = await signInWithPopup(auth, provider);
       const accessToken = result.user.accessToken;

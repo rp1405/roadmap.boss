@@ -12,8 +12,9 @@ import {
   UserState,
   initialState,
 } from "../slices/userSlice";
+import { auth } from "../Authentication/firebase";
 import { GithubSignIn, GoogleSignIn } from "../Authentication/AllLogins";
-
+import { signOut } from "@firebase/auth";
 const Header = () => {
   const dispatch = useDispatch();
   const history = useNavigate();
@@ -177,8 +178,9 @@ const Header = () => {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   className="lucide lucide-log-out hover:text-white hover:cursor-pointer"
-                  onClick={() => {
+                  onClick={async () => {
                     try {
+                      await signOut(auth);
                       dispatch(setUser(initialState));
                     } catch (error) {
                       console.log(error);

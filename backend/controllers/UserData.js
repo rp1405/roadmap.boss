@@ -7,9 +7,9 @@ const mongoose = require("mongoose");
 router.post("/userAuthentication", async (req, res) => {
   try {
     const userDetails = req.body;
-    const email = req.body.email;
+    const uid = req.body.uid;
     const user = await User.findOneAndUpdate(
-      { email: userDetails.email }, // Define the query criteria
+      { uid: userDetails.uid }, // Define the query criteria
       { $setOnInsert: userDetails }, // Set defaults if document is inserted
       { upsert: true, new: true } // Create new document if not found, return the updated document
     );
